@@ -4,23 +4,26 @@ declare(strict_types=1);
 
 namespace Animals;
 
-class Hamster extends Animal
+class Cat extends Animal
 {
     private string $color;
 
+    public function __construct(string $name, int $age, string $color) {
     public function __construct(string $name, int $age, string $color)
     {
-        parent::__construct($name, $age, 'Хомяк');
+        parent::__construct($name, $age, 'Кошка');
         $this->color = $color;
     }
 
+    public function getColor(): string {
     public function getColor(): string
     {
         return $this->color;
     }
 
+    public function makeSound(): void {
     public function makeSound(): void
     {
-        echo $this->getName() . ' говорит: Пи-пи!' . '<br>';
+        echo $this->getName() . ' говорит: Мяу!' . '<br>';
     }
 }
