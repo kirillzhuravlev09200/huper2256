@@ -1,3 +1,4 @@
+<?php
 class Cat extends Animal {
     private $color;
 
@@ -14,3 +15,4 @@ class Cat extends Animal {
         return parent::getInfo() . ", Цвет: {$this->color}";
     }
 }
+php?>
