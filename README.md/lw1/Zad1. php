@@ -1,5 +1,0 @@
-<?php // Принимаем данные из формы или запроса 
-$password = $_POST['password'] ?? '';
- $confirm = $_POST['1confirm'] ?? ''; // Сравнение паролей
-  if ($password === $confirm) { echo "Пароль принят"; } else { echo "Пароль не совпадает"; } ?>
-
