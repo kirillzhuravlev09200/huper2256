@@ -1,29 +1,19 @@
 <?php
 
-declare(strict_types=1);
+class Dog extends Animal {
+    private $breed;
 
-namespace Animals;
-
-class Dog extends Animal
-{
-    private string $breed;
-
-    public function __construct(string $name, int $age, string $breed) {
-    public function __construct(string $name, int $age, string $breed)
-    {
+    public function __construct($name, $age, $breed) {
         parent::__construct($name, $age, 'Собака');
         $this->breed = $breed;
     }
 
-    public function getBreed(): string {
-    public function getBreed(): string
-    {
-        return $this->breed;
+    public function makeSound() {
+        return "Гав-гав!";
     }
 
-    public function makeSound(): void {
-    public function makeSound(): void
-    {
-        echo $this->getName() . ' говорит: Гав-гав!' . '<br>';
+    public function getInfo() {
+        return parent::getInfo() . ", Порода: {$this->breed}";
     }
 }
+?>
