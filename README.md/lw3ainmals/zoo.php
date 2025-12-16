@@ -1,39 +1,22 @@
 <?php
 
-declare(strict_types=1);
+class Zoo {
+    private $animals = [];
 
-namespace Animals;
-
-class Zoo
-{
-    private array $animals = [];
-
-    public function addAnimal(Animal $animal): void {
-    public function addAnimal(Animal $animal): void
-    {
+    public function addAnimal(Animal $animal) {
         $this->animals[] = $animal;
     }
 
-    public function listAnimals(): void {
-    public function listAnimals(): void
-    {
-        echo 'Животные в зоопарке:' . '<br>';
+    public function listAnimals() {
         foreach ($this->animals as $animal) {
-            echo sprintf(
-                '- %s (%s), возраст %d' . '<br>',
-                $animal->getName(),
-                $animal->getSpecies(),
-                $animal->getAge()
-            );
+            echo $animal->getInfo() . PHP_EOL;
         }
     }
 
-    public function animalSounds(): void {
-    public function animalSounds(): void
-    {
-        echo '<br>' . 'Звуки животных:' . '<br>';
+    public function animalSounds() {
         foreach ($this->animals as $animal) {
-            $animal->makeSound();
+            echo "{$animal->getInfo()} издает звук: {$animal->makeSound()}" . PHP_EOL;
         }
     }
 }
+?>
