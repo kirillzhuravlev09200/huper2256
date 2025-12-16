@@ -1,0 +1,11 @@
+<?php
+function alphabeticalOrder($str) {
+    // Преобразуем строку в массив символов
+    $arr = str_split($str);
+    // Сортируем массив
+    sort($arr);
+    // Преобразуем массив обратно в строку
+    return implode('', $arr);
+}
+echo alphabeticalOrder('alphabetical'); 
+?>
