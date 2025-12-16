@@ -1,29 +1,16 @@
-<?php
+class Cat extends Animal {
+    private $color;
 
-declare(strict_types=1);
-
-namespace Animals;
-
-class Cat extends Animal
-{
-    private string $color;
-
-    public function __construct(string $name, int $age, string $color) {
-    public function __construct(string $name, int $age, string $color)
-    {
+    public function __construct($name, $age, $color) {
         parent::__construct($name, $age, 'Кошка');
         $this->color = $color;
     }
 
-    public function getColor(): string {
-    public function getColor(): string
-    {
-        return $this->color;
+    public function makeSound() {
+        return "Мяу!";
     }
 
-    public function makeSound(): void {
-    public function makeSound(): void
-    {
-        echo $this->getName() . ' говорит: Мяу!' . '<br>';
+    public function getInfo() {
+        return parent::getInfo() . ", Цвет: {$this->color}";
     }
 }
