@@ -1,0 +1,15 @@
+<?php
+
+function mostRecent($text) {
+    $text = preg_replace('/[^ws]/', '', strtolower($text));
+    $words = explode(' ', $text);
+    
+    $wordCount = array_count_values($words);
+  
+    $mostFrequentWord = array_search(max($wordCount), $wordCount);
+    
+    return $mostFrequentWord;
+}
+
+$text = "Hello world! Hello everyone. This world is beautiful.";
+echo mostRecent($text); // Вывод: hello
